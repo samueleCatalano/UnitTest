@@ -5,7 +5,6 @@ import com.unittest.unittest.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,8 +16,7 @@ public class UserService {
 
 
     public List<User> findAll() {
-        List<User> userList = new ArrayList<>();
-        return userList;
+       return userRepository.findAll();
     }
 
     public Optional<User> findById(Long id) {
@@ -26,11 +24,14 @@ public class UserService {
     }
 
     public void save(User user) {
+         userRepository.save(user);
     }
 
     public void deleteAll() {
+         userRepository.deleteAll();
     }
 
     public void deleteById(Long id) {
+        userRepository.deleteById(id);
     }
 }
